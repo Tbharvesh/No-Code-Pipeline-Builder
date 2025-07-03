@@ -76,6 +76,7 @@ export const APICallNode = ({ id, data }) => {
               radius="sm"
               p="xs"
               style={{
+                
                 width: '300px',          
                 maxWidth: '100%',       
                 overflowWrap: 'break-word',

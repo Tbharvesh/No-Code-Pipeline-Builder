@@ -60,7 +60,7 @@ export const PipelineToolbar = () => {
           />
           <DraggableNode 
             type='llm' 
-            label='LLM' 
+            label='OpenAI LLM' 
             icon='🤖'
             description='AI processing'
           />
