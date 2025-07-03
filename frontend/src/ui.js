@@ -10,7 +10,7 @@ import { InputNode } from './nodes/inputNode';
 import { LLMNode } from './nodes/llmNode';
 import { OutputNode } from './nodes/outputNode';
 import { TextNode } from './nodes/textNode';
-import { FilterNode } from './nodes/FilterNode'; 
+import { KnowledgeBaseReader } from './nodes/KnowledgeBaseReader'; 
 import { LoggerNode } from './nodes/LogNode';
 import { APICallNode } from './nodes/APICallNode';
 import { MathNode } from './nodes/MathNode';
@@ -27,7 +27,7 @@ const nodeTypes = {
   customOutput: OutputNode,
   text: TextNode,
   log: LoggerNode,
-  filter: FilterNode,
+  knowledgebasereader: KnowledgeBaseReader,
   apiCall: APICallNode,
   math: MathNode,
   imageDisplay: ImageDisplayNode
@@ -68,7 +68,7 @@ export const PipelineUI = () => {
       return { log: 'Log this message' };
     case 'math':
       return { a: 0, b: 0, operation: 'add' };
-    case 'filter':
+    case 'knowledgebasereader':
       return { filterCondition: 'default' };
     case 'imageDisplay':
       return { imageSrc: 'https://via.placeholder.com/150' };

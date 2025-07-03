@@ -54,8 +54,8 @@ import { BaseNode } from './BaseNode';
 import { TextInput, Select, Text, Stack, Group, Badge } from '@mantine/core';
 
 export const InputNode = ({ id, data }) => {
-  const [currName, setCurrName] = useState(data?.inputName || id.replace('customInput-', 'input_'));
-  const [inputType, setInputType] = useState(data.inputType || 'Text');
+  const [currName, setCurrName] = useState('');
+  const [inputType, setInputType] = useState('');
 
   return (
     <BaseNode

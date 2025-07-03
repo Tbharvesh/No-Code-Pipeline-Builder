@@ -83,10 +83,10 @@ export const PipelineToolbar = () => {
             description='Log messages'
           />
           <DraggableNode 
-            type='filter' 
-            label='Filter' 
+            type='knowledgebasereader' 
+            label='Knowledge Base Reader' 
             icon='🔍'
-            description='Data filtering'
+            description='Retrieves KB data'
           />
           <DraggableNode 
             type='apiCall' 

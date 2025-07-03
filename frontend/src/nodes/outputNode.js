@@ -54,8 +54,8 @@ import { BaseNode } from './BaseNode';
 import { TextInput, Select } from '@mantine/core';
 
 export const OutputNode = ({ id, data }) => {
-  const [currName, setCurrName] = useState(data?.outputName || id.replace('customOutput-', 'output_'));
-  const [outputType, setOutputType] = useState(data.outputType || 'Text');
+  const [currName, setCurrName] = useState('');
+  const [outputType, setOutputType] = useState('');
 
   return (
     <BaseNode
