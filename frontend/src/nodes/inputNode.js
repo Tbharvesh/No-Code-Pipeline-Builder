@@ -51,6 +51,7 @@
 
 import { useState } from 'react';
 import { BaseNode } from './BaseNode';
+import { TextInput, Select, Text, Stack, Group, Badge } from '@mantine/core';
 
 export const InputNode = ({ id, data }) => {
   const [currName, setCurrName] = useState(data?.inputName || id.replace('customInput-', 'input_'));
@@ -61,17 +62,69 @@ export const InputNode = ({ id, data }) => {
       id={id}
       title="Input"
       outputHandles={[{ id: `${id}-value` }]}
+      
     >
       <label>
         Name:
-        <input type="text" value={currName} onChange={(e) => setCurrName(e.target.value)} />
+        <TextInput
+                    type="text"
+                    value={currName}
+                    onChange={(e) => setCurrName(e.target.value)}
+                    placeholder="Enter Your Name"
+                    size="sm"
+                    styles={{
+                      input: { 
+                        backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                        borderColor: 'rgba(255, 255, 255, 0.3)',
+                        color: 'white',
+                        backdropFilter: 'blur(10px)',
+                        '&:focus': {
+                          borderColor: '#00d4ff',
+                          boxShadow: '0 0 0 2px rgba(0, 212, 255, 0.2)'
+                        },
+                        '&::placeholder': {
+                          color: 'rgba(255, 255, 255, 0.5)'
+                        }
+                      },
+                      label: { 
+                        color: 'rgba(255, 255, 255, 0.9)',
+                        fontWeight: 600,
+                        fontSize: '12px'
+                      }
+                    }}
+                  />
+        
       </label>
       <label>
+
+       
         Type:
-        <select value={inputType} onChange={(e) => setInputType(e.target.value)}>
-          <option value="Text">Text</option>
-          <option value="File">File</option>
-        </select>
+        <Select
+          value={inputType}
+          onChange={setInputType}
+          data={[
+            { value: 'Text', label: 'Text' },
+            { value: 'File', label: 'File' },
+          ]}
+          size="sm"
+          styles={{
+            input: { 
+              backgroundColor: 'rgba(255, 255, 255, 0.1)',
+              borderColor: 'rgba(255, 255, 255, 0.3)',
+              color: 'white',
+              backdropFilter: 'blur(10px)',
+              '&:focus': {
+                borderColor: '#00d4ff',
+                boxShadow: '0 0 0 2px rgba(0, 212, 255, 0.2)'
+              }
+            },
+            label: { 
+              color: 'rgba(255, 255, 255, 0.9)',
+              fontWeight: 600,
+              fontSize: '12px'
+            }
+          }}
+        />
       </label>
     </BaseNode>
   );
