@@ -39,6 +39,7 @@
 // textNode.js
 import { useState } from 'react';
 import { BaseNode } from './BaseNode';
+import { TextInput } from '@mantine/core';
 
 export const TextNode = ({ id, data }) => {
   const [currText, setCurrText] = useState(data?.text || '{{input}}');
@@ -49,10 +50,35 @@ export const TextNode = ({ id, data }) => {
       title="Text"
       outputHandles={[{ id: `${id}-output` }]}
     >
-      <label>
-        Text:
-        <input type="text" value={currText} onChange={(e) => setCurrText(e.target.value)} />
-      </label>
+      <TextInput
+                          label="Text"
+                          type="text"
+                          value={currText}
+                          onChange={(e) => setCurrText(e.target.value)}
+                          placeholder="Enter Your Text"
+                          size="sm"
+                          styles={{
+                            input: { 
+                              backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                              borderColor: 'rgba(255, 255, 255, 0.3)',
+                              color: 'white',
+                              backdropFilter: 'blur(10px)',
+                              '&:focus': {
+                                borderColor: '#00d4ff',
+                                boxShadow: '0 0 0 2px rgba(0, 212, 255, 0.2)'
+                              },
+                              '&::placeholder': {
+                                color: 'rgba(255, 255, 255, 0.5)'
+                              }
+                            },
+                            label: { 
+                              color: 'rgba(255, 255, 255, 0.9)',
+                              fontWeight: 600,
+                              fontSize: '12px'
+                            }
+                          }}
+                        />
+    
     </BaseNode>
   );
 };

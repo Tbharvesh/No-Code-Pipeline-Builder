@@ -64,9 +64,10 @@ export const InputNode = ({ id, data }) => {
       outputHandles={[{ id: `${id}-value` }]}
       
     >
-      <label>
-        Name:
+      <Stack>
+        
         <TextInput
+                    label="Name"
                     type="text"
                     value={currName}
                     onChange={(e) => setCurrName(e.target.value)}
@@ -94,12 +95,12 @@ export const InputNode = ({ id, data }) => {
                     }}
                   />
         
-      </label>
-      <label>
-
-       
-        Type:
+    
+        
         <Select
+        label="Type"
+          placeholder="Select input type"
+        
           value={inputType}
           onChange={setInputType}
           data={[
@@ -125,7 +126,7 @@ export const InputNode = ({ id, data }) => {
             }
           }}
         />
-      </label>
+      </Stack> 
     </BaseNode>
   );
 };
