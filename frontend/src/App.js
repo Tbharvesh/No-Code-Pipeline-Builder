@@ -13,9 +13,9 @@ function App() {
       }}
     >
       <Container fluid size="xl" >
-        <Stack gap="md" justify="center" align="center">
+        <Stack gap="sm" justify="center" align="center">
           <PipelineToolbar />
-          <PipelineUI />
+          <PipelineUI  />
           <SubmitButton />
         </Stack>
       </Container>

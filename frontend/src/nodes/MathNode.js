@@ -52,6 +52,11 @@ export const MathNode = ({ id, data, selected }) => {
       title="Math Calculator" 
       description="Performs mathematical operations"
       icon="🔢"
+      inputHandles={[
+        { id: `${id}-a`, label: 'Value A', style: { top: '20%' } },
+        { id: `${id}-b`, label: 'Value B', style: { top: '50%' } },
+        { id: `${id}-operation`, label: 'Operation', style: { top: '80%' } },
+      ]}
       outputHandles={[{ id: `${id}-result` }]}
       selected={selected}
     >

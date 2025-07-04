@@ -1,16 +1,5 @@
-// // submit.js
+// submit.js
 
-// export const SubmitButton = () => {
-
-//     return (
-//         <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-//             <button type="submit">Submit</button>
-//         </div>
-//     );
-// }
-// submit.js
-// submit.js
-// submit.js
 
 import { Button, Modal, Text, Group, Stack, Badge, Alert } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';

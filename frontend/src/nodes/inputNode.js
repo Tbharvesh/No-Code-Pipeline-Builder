@@ -61,6 +61,7 @@ export const InputNode = ({ id, data }) => {
     <BaseNode
       id={id}
       title="Input"
+      inputHandles={[{ id: `${id}-value` }]}
       outputHandles={[{ id: `${id}-value` }]}
       
     >

@@ -1,4 +1,3 @@
-"use client"
 
 import { useState, useMemo } from "react"
 import { Group, Paper, Text, Container, TextInput, Flex } from "@mantine/core"
@@ -136,7 +135,7 @@ export const PipelineToolbar = () => {
 
         {/* Nodes Display */}
         {filteredNodes.length > 0 ? (
-          <Group gap="lg" justify="center" style={{ display: "flex", flexWrap: "wrap" }}>
+          <Group gap="md" justify="center" style={{ display: "flex", flexWrap: "wrap" }}>
             {filteredNodes.map((node) => (
               <DraggableNode
                 key={node.type}

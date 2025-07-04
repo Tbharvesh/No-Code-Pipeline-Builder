@@ -8,6 +8,7 @@ export const LoggerNode = ({ id }) => {
       id={id}
       title="Logger"
       inputHandles={[{ id: `${id}-in` }]}
+      outputHandles={[{ id: `${id}-out` }]}
     >
         <Text
                             size="sm"
