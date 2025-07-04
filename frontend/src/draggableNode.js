@@ -22,7 +22,7 @@ export const DraggableNode = ({ type, label, icon, description }) => {
       radius="lg"
       style={{
         cursor: 'grab',
-        minWidth: 140,
+        minWidth: 120,
         minHeight: 90,
         background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
         border: '2px solid rgba(255, 255, 255, 0.1)',

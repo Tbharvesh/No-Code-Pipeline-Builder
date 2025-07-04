@@ -12,8 +12,8 @@ function App() {
         padding: '20px',
       }}
     >
-      <Container fluid size="xl">
-        <Stack gap="xl">
+      <Container fluid size="xl" >
+        <Stack gap="md" justify="center" align="center">
           <PipelineToolbar />
           <PipelineUI />
           <SubmitButton />

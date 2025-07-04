@@ -15,6 +15,8 @@ import { LoggerNode } from './nodes/LogNode';
 import { APICallNode } from './nodes/APICallNode';
 import { MathNode } from './nodes/MathNode';
 import { ImageDisplayNode } from './nodes/ImageDisplayNode';
+import { Group } from '@mantine/core';
+
 
 
 import 'reactflow/dist/style.css';
@@ -128,9 +130,9 @@ export const PipelineUI = () => {
         event.dataTransfer.dropEffect = 'move';
     }, []);
 
-    return (
+  return (
         <>
-        <div ref={reactFlowWrapper} style={{width: '100wv', height: '70vh'}}>
+        <div ref={reactFlowWrapper} style={{width: '90vw', height: '50vh'}}>
             <ReactFlow
                 nodes={nodes}
                 edges={edges}
@@ -146,8 +148,22 @@ export const PipelineUI = () => {
                 connectionLineType='smoothstep'
             >
                 <Background color="#aaa" gap={gridSize} />
-                <Controls />
-                <MiniMap />
+                <MiniMap 
+                    style={{
+                        position: 'absolute',
+                        // right: '80px',
+                        // top: '10px',
+                        zIndex: 4
+                    }}
+                />
+                <Controls 
+                    style={{
+                        position: 'absolute',
+                        left: '82%',
+                        // top: '110px',
+                        zIndex: 4
+                    }}
+                />
             </ReactFlow>
         </div>
         </>
