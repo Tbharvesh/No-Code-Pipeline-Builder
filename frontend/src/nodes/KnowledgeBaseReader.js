@@ -11,6 +11,7 @@ export const KnowledgeBaseReader = ({ id }) => {
       id={id}
       title="KnowledgeBaseReader"
       inputHandles={[{ id: `${id}-in` }]}
+      outputHandles={[{ id: `${id}-out` }]}
     >
       
       <Stack>
