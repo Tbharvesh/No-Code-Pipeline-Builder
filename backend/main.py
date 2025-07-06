@@ -1,14 +1,3 @@
-# from fastapi import FastAPI, Form
-
-# app = FastAPI()
-
-# @app.get('/')
-# def read_root():
-#     return {'Ping': 'Pong'}
-
-# @app.get('/pipelines/parse')
-# def parse_pipeline(pipeline: str = Form(...)):
-#     return {'status': 'parsed'}
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
@@ -38,7 +27,7 @@ def is_dag(nodes: List[Dict], edges: List[Dict]) -> bool:
     graph = defaultdict(list)
     in_degree = defaultdict(int)
     
-    # Initialize in-degree for all nodes
+    # Initialize in-degree for all nodes   [A -> B, A -> C, B -> D]
     node_ids = {node.get('id') for node in nodes}
     for node_id in node_ids:
         in_degree[node_id] = 0
@@ -67,10 +56,6 @@ def is_dag(nodes: List[Dict], edges: List[Dict]) -> bool:
     
     # If we processed all nodes, it's a DAG
     return processed_count == len(node_ids)
-
-# @app.get('/')
-# def read_root():
-#     return {'Ping': 'Pong'}
 
 @app.post('/pipelines/parse')
 def parse_pipeline(pipeline_data: PipelineData):
