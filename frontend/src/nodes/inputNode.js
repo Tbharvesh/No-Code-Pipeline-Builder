@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import { BaseNode } from './BaseNode';
 import { TextInput, Select, Text, Stack, Group, Badge } from '@mantine/core';
+import { useStore } from '../store';
 
 export const InputNode = ({ id, data }) => {
+  const updateNodeField = useStore((state) => state.updateNodeField);
   const [currName, setCurrName] = useState('');
   const [inputType, setInputType] = useState('');
 
@@ -12,6 +14,7 @@ export const InputNode = ({ id, data }) => {
       title="Input"
       inputHandles={[{ id: `${id}-value` }]}
       outputHandles={[{ id: `${id}-value` }]}
+
       
     >
       <Stack>
@@ -20,7 +23,10 @@ export const InputNode = ({ id, data }) => {
                     label="Name"
                     type="text"
                     value={currName}
-                    onChange={(e) => setCurrName(e.target.value)}
+                    onChange={(e) => {
+                      setCurrName(e.target.value);
+                      updateNodeField(id, 'text', e.target.value);
+                    }}
                     placeholder="Enter Your Name"
                     size="sm"
                     styles={{

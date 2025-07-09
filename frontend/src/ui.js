@@ -44,6 +44,7 @@ const selector = (state) => ({
   onNodesChange: state.onNodesChange,
   onEdgesChange: state.onEdgesChange,
   onConnect: state.onConnect,
+  updateNodeField: state.updateNodeField
 });
 
 export const PipelineUI = () => {
@@ -56,7 +57,8 @@ export const PipelineUI = () => {
       addNode,
       onNodesChange,
       onEdgesChange,
-      onConnect
+      onConnect,
+      updateNodeField
     } = useStore(selector, shallow);
    const getInitNodeData = (nodeID, type) => {
   switch (type) {
@@ -130,6 +132,8 @@ export const PipelineUI = () => {
         event.dataTransfer.dropEffect = 'move';
     }, []);
 
+    
+
   return (
         <>
         <div ref={reactFlowWrapper} style={{width: '90vw', height: '50vh'}}>
@@ -145,7 +149,10 @@ export const PipelineUI = () => {
                 nodeTypes={nodeTypes}
                 proOptions={proOptions}
                 snapGrid={[gridSize, gridSize]}
+                updateNodeField={updateNodeField}
                 connectionLineType='smoothstep'
+                
+                
             >
                 <Background color="#aaa" gap={gridSize} />
                 <MiniMap 
